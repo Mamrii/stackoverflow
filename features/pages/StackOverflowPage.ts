@@ -20,7 +20,15 @@ export class StackOverflowPage {
     }
 
     async getFirstQuestionTitle(): Promise<string> {
-        const title = await this.firstQuestionTitle.first().innerText();
-        return title.trim();
-    }
+
+    const firstTitle = this.firstQuestionTitle.first();
+    await firstTitle.waitFor({
+        state: "visible",
+        timeout: 30000
+    });
+
+    const title = await firstTitle.innerText();
+
+    return title.trim();
+}
 }
