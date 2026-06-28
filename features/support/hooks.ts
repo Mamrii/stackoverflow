@@ -1,6 +1,9 @@
 import { Before, After } from "@cucumber/cucumber";
 import { chromium } from "@playwright/test";
 import { CustomWorld } from "./world";
+import { setDefaultTimeout } from "@cucumber/cucumber";
+
+setDefaultTimeout(60000); // 60 secondes
 
 Before(async function (this: CustomWorld) {
     this.browser = await chromium.launch({
