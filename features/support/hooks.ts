@@ -11,12 +11,12 @@ Before(async function (this: CustomWorld) {
     });
     //this.context = await this.browser.newContext();
     this.context = await this.browser.newContext({
-    userAgent:
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36",
-    locale: "en-US",
-    viewport: { width: 1280, height: 720 }
+    extraHTTPHeaders: {
+        "Accept-Language": "en-US,en;q=0.9"
+    },
+    locale: "en-US"
     });
-    
+
     this.page = await this.context.newPage();
 });
 
