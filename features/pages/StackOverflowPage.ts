@@ -8,7 +8,7 @@ export class StackOverflowPage {
 
     constructor(private page: Page) {
 
-        this.firstQuestionTitle = this.page.locator("h3.s-post-summary--content-title a.s-link");
+        this.firstQuestionTitle = this.page.locator("(//div[contains(@class,'s-post-summary--content')]//span[@itemprop='name'])[1]");
     }
 
     // ===== ACTIONS =====
@@ -19,7 +19,7 @@ export class StackOverflowPage {
 
     async getFirstQuestionTitle(): Promise<string> {
 
-    const firstTitle = this.firstQuestionTitle.first();
+    const firstTitle = this.firstQuestionTitle;
     await firstTitle.waitFor({
         state: "visible",
         timeout: 30000
