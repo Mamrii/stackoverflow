@@ -8,7 +8,7 @@ export class StackOverflowPage {
 
     constructor(private page: Page) {
 
-        this.firstQuestionTitle = this.page.locator("(//div[contains(@class,'s-post-summary--content')]//span[@itemprop='name'])[1]");
+        this.firstQuestionTitle = this.page.locator("(//h3//a//span[@itemprop='name'])[1]");
     }
 
     // ===== ACTIONS =====
