@@ -8,9 +8,7 @@ export class StackOverflowPage {
 
     constructor(private page: Page) {
 
-        this.firstQuestionTitle = this.page.locator(
-            "#questions .s-post-summary h3 a"
-        );
+        this.firstQuestionTitle = this.page.locator("h3.s-post-summary--content-title a.s-link");
     }
 
     // ===== ACTIONS =====
