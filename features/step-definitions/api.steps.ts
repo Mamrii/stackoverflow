@@ -5,7 +5,9 @@ import { Config } from "../support/config";
 
 Given("A_API_ j'appelle le endpoint {string}",
   async function (this: CustomWorld, endpoint: string) {
+
     this.endpoint = endpoint;
+    
   }
 );
 
